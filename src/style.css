@@ -58,6 +58,14 @@ body {
     font-size: 0.9em;
 }
 
+.tag:hover{
+  cursor: pointer;
+}
+
+.vertical-line:hover{
+  cursor: ew-resize;
+}
+
 /* --- Main Content (Flexbox for 3-column layout) --- */
 .main-content {
     display: flex;
