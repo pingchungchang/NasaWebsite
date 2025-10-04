@@ -1,0 +1,258 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* --- NASA-Style Dark Theme --- */
+:root {
+    --background-color: #161a25; /* Deep space blue/black */
+    --container-bg-color: #1c202d; /* Slightly lighter panel color */
+    --border-color: rgba(0, 170, 255, 0.2); /* Faint blue grid lines */
+    --primary-text-color: #e0e0e0; /* Off-white for readability */
+    --secondary-text-color: #a0a0a0; /* Dimmer gray for less important text */
+    
+    --accent-color-primary: #00aaff; /* Bright, vibrant blue for highlights */
+    --accent-color-secondary: #fc3d21; /* NASA "worm" logo red for critical items */
+}
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Share Tech Mono', 'Roboto Mono', monospace;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.05); /* Subtle glow */
+}
+
+/* --- Header --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--accent-color-primary);
+    text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+.meta-tags .tag {
+    display: inline-block;
+    border: 1px solid var(--accent-color-primary);
+    background-color: rgba(0, 170, 255, 0.1);
+    color: var(--accent-color-primary);
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+/* --- Main Content (Flexbox for 3-column layout) --- */
+.main-content {
+    display: flex;
+    gap: 20px; /* Space between columns */
+}
+
+/* Left Column */
+.data-parameters {
+    flex: 0 0 150px;
+}
+
+.data-parameters ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-parameters li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+.data-parameters li strong {
+    color: #fff; /* Make labels brighter */
+}
+
+/* Center Column */
+.visual-container {
+    flex: 1;
+    border: 3px solid var(--accent-color-secondary);
+    padding: 5px;
+    background-color: #000;
+}
+
+.visual-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Right Column */
+.explanation-sidebar {
+    flex: 0 0 220px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(0,0,0,0.2);
+    padding: 15px;
+}
+
+.explanation-sidebar h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    color: var(--accent-color-primary);
+}
+.explanation-sidebar p {
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+}
+
+/* --- Timeline --- */
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+}
+
+.timeline-step {
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-step:not(.active):hover {
+    opacity: 0.8;
+}
+
+.timeline-step span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color-primary);
+    margin: 0 auto 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--accent-color-primary);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+.timeline-step:hover span {
+    background-color: rgba(0, 170, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+.timeline-step p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+.timeline-step.active span {
+    background-color: var(--accent-color-secondary);
+    color: #fff;
+    border-color: var(--accent-color-secondary);
+    box-shadow: 0 0 15px rgba(252, 61, 33, 0.7);
+}
+
+.timeline-step.active p {
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+/* Arrow for the active step */
+.timeline-step.active::before {
+    content: '▼'; /* Changed to a more digital-looking triangle */
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: var(--accent-color-secondary);
+    text-shadow: 0 0 5px var(--accent-color-secondary);
+}
+
+
+
+.grid-stack {
+	display: grid;
+	/* 將所有子項目都置中 */
+	place-items: center;
+}
+
+/* 讓所有圖片都佔據同一個網格單元 */
+.grid-stack > * {
+	grid-area: 1 / 1;
+}
+
+.grid-stack .grid-left {
+	object-fit: cover;
+	place-self: start start;
+	z-index: 2;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	resize: horizontal;
+	overflow: auto;
+}
+
+.grid-left .image-left {
+	background-image: url('/920.png');
+	background-size: cover;
+	object-fit: cover;
+	place-self: start start;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	resize: horizontal;
+	overflow: auto;
+	z-index: 3;
+}
+
+.grid-stack .image-right {
+	object-fit: cover;
+	place-self: end end;
+	z-index: 1;
+}
+
+.vertical-line {
+	height: 100%;
+	flex-shrink: 0;
+	background-color: #39C5BB;
+	width: 10px;
+}
+
+
+.timeline1 {
+	display: flex; /* 啟用 Flexbox 佈局 */
+	justify-content: space-between; /* 讓項目平均分配空間 */
+	align-items: center; /* 讓項目在垂直方向上置中 */
+	list-style: none;
+	padding: 0;
+	margin: 50px 0;
+}
+
+.timeline2 {
+	display: flex; /* 啟用 Flexbox 佈局 */
+	justify-content: space-between; /* 讓項目平均分配空間 */
+	align-items: center; /* 讓項目在垂直方向上置中 */
+	list-style: none;
+	padding: 0;
+	margin: 50px 0;
+}
+/* --- 關鍵 CSS 結束 --- */
