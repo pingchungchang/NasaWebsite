@@ -43,10 +43,10 @@ let disasters = [] // event_discription.length = events.length
 disasters.push(
 	{
 		events: [
-			["./930.png", ""],
-			["./920.png", ""],
+			["./930.png", "Sep40"],
+			["./920.png", "Sep40"],
 			["./930.png", "BIG EVENT"],
-			["./920.png", ""],
+			["./920.png", "Sep40"],
 			["./930.png", "BIG EVENT TOO!"],
 		],
 		buttonClassName: 'tag-event1',
@@ -59,8 +59,8 @@ disasters.push(
 	{
 		events: [
 			["./920.png", "BIG EVENT"],
-			["./930.png", ""],
-			["./920.png", ""],
+			["./930.png", "Sep40"],
+			["./920.png", "Sep40"],
 			["./930.png", "BIG EVENT TOO!"],
 		],
 		buttonClassName: 'tag-event2',
@@ -127,3 +127,37 @@ btns2.forEach(function(btn, index) {
 })
 
 reload(disasters[0])
+
+// --- Modal Pop-up Logic ---
+const modalOverlay = document.getElementById('modal-overlay');
+const modalCloseBtn = document.querySelector('.modal-close-btn');
+
+function showModal() {
+    modalOverlay.classList.remove('hidden');
+}
+
+function hideModal() {
+    modalOverlay.classList.add('hidden');
+}
+
+// Close the modal when the 'X' button is clicked
+modalCloseBtn.addEventListener('click', hideModal);
+
+// Close the modal when the user clicks on the overlay background
+modalOverlay.addEventListener('click', (event) => {
+    // Only close if the click is on the overlay itself, not the content
+    if (event.target === modalOverlay) {
+        hideModal();
+    }
+});
+
+// Close the modal when the 'Escape' key is pressed
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+        hideModal();
+    }
+});
+
+// Show the modal when the page first loads
+// You can comment this out if you want to trigger it with a button instead
+window.addEventListener('load', showModal);
