@@ -49,9 +49,9 @@ disasters.push(
 			["./920.png", ""],
 			["./930.png", "BIG EVENT TOO!"],
 		],
-		buttonClassName: 'tag-88',
+		buttonClassName: 'tag-event1',
 		description: "88888888888888888",
-		title: "88 水災",
+		title: "Fata'an Creek Barrier Lake Overflow Incident",
 	}
 )
 
@@ -63,9 +63,9 @@ disasters.push(
 			["./920.png", ""],
 			["./930.png", "BIG EVENT TOO!"],
 		],
-		buttonClassName: 'tag-hualien',
+		buttonClassName: 'tag-event2',
 		description: "a nearest one",
-		title: "923 花蓮水災"
+		title: "Event 2"
 	}
 )
 var now_disaster = disasters[0]

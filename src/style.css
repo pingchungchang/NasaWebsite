@@ -215,8 +215,8 @@ body {
 	display: flex;
 	height: 100%;
 	width: 100%;
-	resize: horizontal;
-	overflow: auto;
+	
+	overflow: hidden; /* resize: horizontal;*/ 
 }
 
 .grid-left .image-left {
@@ -227,8 +227,8 @@ body {
 	display: flex;
 	height: 100%;
 	width: 100%;
-	resize: horizontal;
-	overflow: auto;
+	
+	overflow: hidden; /* resize: horizontal;*/
 	z-index: 3;
 }
 
