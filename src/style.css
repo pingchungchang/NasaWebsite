@@ -56,10 +56,13 @@ body {
     padding: 5px 10px;
     margin-left: 10px;
     font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tag:hover{
   cursor: pointer;
+  background-color: var(--accent-color-primary);
+  color: var(--container-bg-color);
 }
 
 .vertical-line:hover{
