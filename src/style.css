@@ -180,6 +180,13 @@ h2 {
     color: var(--secondary-text-color);
 }
 
+/* --- Style for Disabled Timeline Step --- */
+.timeline-step.disabled {
+    opacity: 0.8; /* Make it look faded */
+    cursor: not-allowed; /* Show a 'not allowed' cursor on hover */
+    pointer-events: none; /* Ignore all mouse clicks */
+}
+
 .timeline-step.active span {
     background-color: var(--accent-color-secondary);
     color: #fff;

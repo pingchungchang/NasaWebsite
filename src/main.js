@@ -43,11 +43,12 @@ let disasters = [] // event_discription.length = events.length
 disasters.push(
 	{
 		events: [
-			["./930.png", "Sep40"],
-			["./920.png", "Sep40"],
-			["./930.png", "BIG EVENT"],
-			["./920.png", "Sep40"],
-			["./930.png", "BIG EVENT TOO!"],
+			["./0722Hualien.png", "Jul22"],
+            ["./0722Hualien.png", "Jul25\nFormation"], // TODO: Disable this button
+			["./0908Hualien.png", "Sep08"],
+			["./0920Hualien.png", "Sep20"],
+			["./0920Hualien.png", "Sep23\nTyphoon Ragasa"], // TODO: Also this
+			["./0930Hualien.png", "Sep30"],
 		],
 		buttonClassName: 'tag-event1',
 		description: "description should also change according to the selected timestamp? And we should put the hypothesis (針對 SAR 的觀察) over here", /* TODO */
@@ -66,8 +67,8 @@ disasters.push(
 		],
 		buttonClassName: 'tag-event2',
 		description: "so what event should be here?",
-		title: "Event 2",
-        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
+		title: "Jinsha River",
+        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=98.6313122525692%2C31.062934758216375%2C98.78323257117272%2C31.1593475455504&amp;layer=mapnik&amp;marker=31.11115339062677%2C98.70727241187092",
 	} /* TODO */
 )
 var now_disaster = disasters[0]
