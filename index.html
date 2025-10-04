@@ -27,6 +27,7 @@
                     <li><strong>VH:</strong> [text]</li>
                     <li><strong>C-band:</strong> [text]</li>
                 </ul>
+                <button id="show-map-btn">View Location</button>
             </aside>
 
             <div class="visual-container">
@@ -92,23 +93,52 @@
             </div>
         </nav>
 
+
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <aside class="map-container">
+                <h2>Incident Location</h2>
+                <iframe 
+                    id="event-map-iframe"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=121.21198654174806%2C23.642165417790658%2C121.36339187622072%2C23.751096650256155&amp;layer=mapnik&amp;marker=23.696563802089745%2C121.28769980054926" 
+                    width="100%" 
+                    height="450" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    style="border: 1px solid black"
+                    allowfullscreen>
+                </iframe>
+            </aside>
+
+            <div>
+                <h2>About the Incident</h2>
+                <p>lorem ipsum. </p>
+            </div>
+        </div>
+
+        
+
     </div>
 
+
+
     <div id="modal-overlay">
-    <div class="modal-content">
-        <button class="modal-close-btn">&times;</button>
-        <h2>Welcome to the ___________________</h2>
-        <p>
-            This interface allows you to compare _______ from different stages of _________________.
-        </p>
-        <p><strong>How to use:</strong></p>
-        <ul>
-            <li>Select an event (e.g., "Fata'an") from the tags in the header.</li>
-            <li>Click on the timeline steps to load different images into your selected side for comparison.</li>
-            <li>Drag the vertical bar in the center to slide between the two images.</li>
-        </ul>
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h2>Welcome to the ___________________</h2>
+            <p>
+                This interface allows you to compare _______ from different stages of _________________.
+            </p>
+            <p><strong>How to use:</strong></p>
+            <ul>
+                <li>Select an event (e.g., "Fata'an") from the tags in the header.</li>
+                <li>Click on the timeline steps to load different images into your selected side for comparison.</li>
+                <li>Drag the vertical bar in the center to slide between the two images.</li>
+            </ul>
+        </div>
     </div>
-</div>
+
 
 </body>
 </html>

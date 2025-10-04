@@ -48,6 +48,11 @@ body {
     text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
 }
 
+h2 {
+    color: var(--accent-color-primary);
+    text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
 .meta-tags .tag {
     display: inline-block;
     border: 1px solid var(--accent-color-primary);

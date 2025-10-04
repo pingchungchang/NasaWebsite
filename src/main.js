@@ -50,9 +50,10 @@ disasters.push(
 			["./930.png", "BIG EVENT TOO!"],
 		],
 		buttonClassName: 'tag-event1',
-		description: "88888888888888888",
+		description: "description should also change according to the selected timestamp? And we should put the hypothesis (針對 SAR 的觀察) over here", /* TODO */
 		title: "Fata'an Creek Barrier Lake Overflow Incident",
-	}
+        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
+	} /* TODO: mapEmbedUrl needs to change according to the current selected event */
 )
 
 disasters.push(
@@ -64,9 +65,10 @@ disasters.push(
 			["./930.png", "BIG EVENT TOO!"],
 		],
 		buttonClassName: 'tag-event2',
-		description: "a nearest one",
-		title: "Event 2"
-	}
+		description: "so what event should be here?",
+		title: "Event 2",
+        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
+	} /* TODO */
 )
 var now_disaster = disasters[0]
 
@@ -161,3 +163,35 @@ window.addEventListener('keydown', (event) => {
 // Show the modal when the page first loads
 // You can comment this out if you want to trigger it with a button instead
 window.addEventListener('load', showModal);
+
+// --- Map Modal Logic ---
+const showMapBtn = document.getElementById('show-map-btn');
+const mapModalOverlay = document.getElementById('map-modal-overlay');
+const mapModalCloseBtn = document.querySelector('.map-modal-close-btn');
+const eventMapIframe = document.getElementById('event-map-iframe');
+
+function showMapModal() {
+    mapModalOverlay.classList.remove('hidden');
+}
+
+function hideMapModal() {
+    mapModalOverlay.classList.add('hidden');
+}
+
+// Open the map modal
+showMapBtn.addEventListener('click', showMapModal);
+
+// Close the map modal
+mapModalCloseBtn.addEventListener('click', hideMapModal);
+mapModalOverlay.addEventListener('click', (event) => {
+    if (event.target === mapModalOverlay) {
+        hideMapModal();
+    }
+});
+
+// Also add Escape key functionality for the map modal
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !mapModalOverlay.classList.contains('hidden')) {
+        hideMapModal();
+    }
+});

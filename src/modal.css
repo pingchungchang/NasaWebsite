@@ -82,3 +82,64 @@
 .modal-content li {
     margin-bottom: 8px;
 }
+
+/* --- Show Map Button Style --- */
+#show-map-btn {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: transparent;
+    border: 1px solid var(--accent-color-primary);
+    color: var(--accent-color-primary);
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 20px;
+}
+
+#show-map-btn:hover {
+    background-color: var(--accent-color-primary);
+    color: var(--container-bg-color);
+}
+
+/* --- Map Modal Specific Styles --- */
+#map-modal-overlay {
+    /* This will inherit all the styles from the first modal's #modal-overlay */
+    /* We just need to add a new close button class and content styles */
+}
+
+.map-modal-content {
+    max-width: 800px; /* Make the map modal wider */
+}
+
+.map-container {
+    width: 40%;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+}
+
+#event-map-iframe {
+    display: block; /* Removes any bottom spacing */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Modern CSS for responsive height */
+}
+
+/* Use a different class for the map close button to avoid conflicts */
+.map-modal-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.map-modal-close-btn:hover {
+    color: var(--accent-color-primary);
+    transform: rotate(90deg);
+}
