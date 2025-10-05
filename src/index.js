@@ -147,21 +147,21 @@ disasters.push(
 	{
 		events: [
 			[
-				"./0430Pakistan.png", "Apr30",
+				"./0430Pakistan.png", "4/30",
 				"This is how the Indus River, Tarbela Dam, and the city of Khairabad normally look before the monsoon season starts in June. You can see the river is staying in its usual path. The lake at Tarbela Dam is at its normal level."
 			],
 			["", "Start of Monsoon", ""],
 			[
-				"./0804Pakistan.png", "Aug04",
+				"./0804Pakistan.png", "8/4",
 				"After the start of the monsoon season, water levels have risen a lot. The reservoir behind Tarbela Dam has expanded, indicating it is filling with monsoon rainwater."
 			],
 			["", "Flood", ""],
 			[
-				"./0816Pakistan.png", "Aug16",
+				"./0816Pakistan.png", "8/16",
 				"Flooding in the city Khairabad is now obvious. The river at Khairabad has begun to overflow its banks, with dark areas indicating that water is spilling into the city. The Tarbela Dam reservoir appears to be approaching its maximum capacity with a large dark area."
 			],
 			[
-				"./0828Pakistan.png", "Aug28",
+				"./0824Pakistan.png", "8/24",
 				"The Tarbela Dam reservoir remains full."
 			],
 		],
@@ -192,7 +192,7 @@ disasters.push(
 		buttonClassName: 'tag-event3',
 		hypothesis: "TODO",
 		title: "2023 Canada Wildfire",
-		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
+		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d17840.6383740169!2d-76.77088383819346!3d53.312799936813235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDE4JzQ1LjgiTiA3NsKwNDUnMTUuMyJX!5e1!3m2!1szh-TW!2stw!4v1759664261983!5m2!1szh-TW!2stw",
 		incidentText: "The 2023 Canada wildfires were the most destructive in the nation’s history, burning over 18 million hectares—an area fueled by extreme heat. The fires caused widespread smoke emergencies across North America and beyond, highlighting the severe impact of climate change on Canada’s boreal forests.",
 	}
 )
