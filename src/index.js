@@ -136,7 +136,8 @@ disasters.push(
 			],
 		],
 		buttonClassName: 'tag-event1',
-        hypothesis: "Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes." + "<br><br>" + "Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.",		title: "Fata'an Creek Barrier Lake Overflow Incident",
+        hypothesis: "<strong>Polarization: </strong> VV<br><br>Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes." + "<br><br>" + "Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.",
+        title: "2025 Fata'an Creek Barrier Lake Overflow Incident",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
 		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fata'an barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	}
@@ -166,9 +167,9 @@ disasters.push(
 		],
 		buttonClassName: 'tag-event2',
 		hypothesis: "so what event should be here?",
-		title: "Pakistan",
+		title: "2025 Pakistan Floods",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12574.408000275269!2d72.21630860376001!3d33.89536473266908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df275de55d828f%3A0x1a64033f155f9673!2zS2hhaXJhYmFkLCDlt7Tln7rmlq_lnaY!5e1!3m2!1szh-TW!2stw!4v1759643156833!5m2!1szh-TW!2stw",
-		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
+		incidentText: "<strong>Polarization: </strong> VV<br><br>In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	} /* TODO */
 )
 
@@ -192,7 +193,7 @@ disasters.push(
 		hypothesis: "TODO",
 		title: "2023 Canada Wildfire",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d17840.6383740169!2d-76.77088383819346!3d53.312799936813235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDE4JzQ1LjgiTiA3NsKwNDUnMTUuMyJX!5e1!3m2!1szh-TW!2stw!4v1759664261983!5m2!1szh-TW!2stw",
-		incidentText: "The 2023 Canada wildfires were the most destructive in the nation’s history, burning over 18 million hectares—an area fueled by extreme heat. The fires caused widespread smoke emergencies across North America and beyond, highlighting the severe impact of climate change on Canada’s boreal forests.",
+		incidentText: "<strong>Polarization: </strong> VH<br><br>The 2023 Canada wildfires were the most destructive in the nation’s history, burning over 18 million hectares—an area fueled by extreme heat. The fires caused widespread smoke emergencies across North America and beyond, highlighting the severe impact of climate change on Canada’s boreal forests.",
 	}
 )
 
