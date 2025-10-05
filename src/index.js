@@ -34,12 +34,17 @@ function ImageSlider_onMouseUp() {
 // --- Modal Pop-up Logic ---
 const modalOverlay = document.getElementById('modal-overlay');
 const modalCloseBtn = document.querySelector('.modal-close-btn');
+const modalTitle = document.querySelector('.modal-title');
+const modalText = document.querySelector('.modal-text');
+const OUR_HYPOTHESIS = "<p>In SAR imagery, the amount of energy received by the satellite depends on the roughness of the surface.</p><p> When the surface is smooth, such as a body of water, most of the radar signal is reflected away from the satellite, resulting in low backscatter and a darker appearance in the image. In contrast, rough surfaces like forests or mountains cause multiple scattering and reflect more energy back to the satellite, appearing brighter.</p> <p>By observing these differences, we can identify changes in terrain and distinguish between water bodies and land or vegetation-covered areas.</p>";
 
 function showModal() {
     modalOverlay.classList.remove('hidden');
 }
 
 function hideModal() {
+	modalText.innerHTML = OUR_HYPOTHESIS;
+	modalTitle.innerHTML = "Our Hypothesis";
     modalOverlay.classList.add('hidden');
 }
 
@@ -134,7 +139,7 @@ disasters.push(
 			], 
 			[
 				"./0930Hualien.png", "Sep30", 
-				"Downtown Guangfu has a large portion of green and blue, indicating the occurrence of the flood. The barrier lake lost its shape at this stage, but more blue dots exist in the surroundings, representing the burst of the lake."
+				"Downtown Guangfu has a large portion of green and blue, indicating the occurrence of the flood. The barrier lake lost its shape at this stage, but more blue dots exist in the surroundings, representing the burst of the lake.<p>Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.</p>"
 			],
 		],
 		buttonClassName: 'tag-event1',
@@ -248,7 +253,7 @@ function reload(disaster) {
 	colorBar.src = `./${disaster.polarize}.jpg`;
 	title_place.innerHTML = disaster.title;
 	console.log(disaster.incidentText)
-	hypothesis_block.innerHTML = disaster.hypothesis;
+	// hypothesis_block.innerHTML = disaster.hypothesis;
 	incident_block.innerHTML = disaster.incidentText;
 	eventMapIframe.src = disaster.mapEmbedUrl;
 	console.log(`reloading ${disaster.buttonClassName}`)
