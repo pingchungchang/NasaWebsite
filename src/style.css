@@ -105,12 +105,14 @@ h2 {
     border: 3px solid var(--accent-color-secondary);
     padding: 5px;
     background-color: #000;
+	align-self: flex-start; 
+    max-height: fit-content;
 }
 
 .visual-container img {
     width: 100%;
     height: auto;
-    display: block;
+    display: grid;
 }
 
 /* Right Column */
@@ -229,6 +231,7 @@ h2 {
 	display: grid;
 	/* 將所有子項目都置中 */
 	place-items: center;
+    height: fit-content; 
 }
 
 /* 讓所有圖片都佔據同一個網格單元 */
