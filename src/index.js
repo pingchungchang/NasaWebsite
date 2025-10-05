@@ -102,38 +102,73 @@ const btns1 = timeline1.querySelectorAll('.timeline-step');
 const timeline2 = document.getElementsByClassName('timeline2')[0];
 const btns2 = timeline2.querySelectorAll('.timeline-step');
 const description_block = document.querySelector(".description-block")
+const incident_block = document.querySelector(".incident-block")
+const hypothesis_block = document.querySelector(".hypothesis-block")
+console.log(incident_block)
 const title_place = document.querySelector(".title-place")
 
 let disasters = [] // event_discription.length = events.length
 disasters.push(
 	{
 		events: [ // button disabling done by empty string for images
-			["./0722Hualien.png", "Jul22"],
-            ["", "Jul25\nFormation"], 
-			["./0908Hualien.png", "Sep08"],
-			["./0920Hualien.png", "Sep20"],
-			["", "Sep23\nTyphoon Ragasa"], 
-			["./0930Hualien.png", "Sep30"],
+			[
+				"./0722Hualien.png", "Jul22",
+				"The lake has not yet formed. We don’t see blue at the location of the barrier lake."
+			],
+            [
+				"", "Jul25\nBarrier Lake Formed", ""
+			], 
+			[
+				"./0908Hualien.png", "Sep08", 
+				"We can clearly see the barrier lake has formed on the left side of the image"
+			],
+			[
+				"./0920Hualien.png", "Sep20",
+				"The lake remains"
+			],
+			[
+				"", "Sep23\nTyphoon Ragasa", ""
+			], 
+			[
+				"./0930Hualien.png", "Sep30", 
+				"Downtown Guangfu has a large portion of green and blue, indicating the occurrence of the flood. The barrier lake lost its shape at this stage, but more blue dots exist in the surroundings, representing the burst of the lake."
+			],
 		],
 		buttonClassName: 'tag-event1',
-		description: "description should also change according to the selected timestamp? And we should put the hypothesis (針對 SAR 的觀察) over here", /* TODO */
+		hypothesis: "Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes. ",
 		title: "Fata'an Creek Barrier Lake Overflow Incident",
-        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
+		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
+		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	}
 )
 
 disasters.push(
 	{
 		events: [
-			["./920.png", "BIG EVENT"],
-			["./930.png", "Sep40"],
-			["./920.png", "Sep40"],
-			["./930.png", "BIG EVENT TOO!"],
+			[
+				"./0430Pakistan.png", "4/30",
+				""
+			],
+			["", "Start of Monsoon", ""],
+			[
+				"./0804Pakistan.png", "8/4",
+				""
+			],
+			["", "Flood", ""],
+			[
+				"./0816Pakistan.png", "8/16",
+				""
+			],
+			[
+				"./0824Pakistan.png", "8/24",
+				""
+			],
 		],
 		buttonClassName: 'tag-event2',
-		description: "so what event should be here?",
-		title: "Jinsha River",
-        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=98.6313122525692%2C31.062934758216375%2C98.78323257117272%2C31.1593475455504&amp;layer=mapnik&amp;marker=31.11115339062677%2C98.70727241187092",
+		hypothesis: "so what event should be here?",
+		title: "Pakistan",
+		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12574.408000275269!2d72.21630860376001!3d33.89536473266908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df275de55d828f%3A0x1a64033f155f9673!2zS2hhaXJhYmFkLCDlt7Tln7rmlq_lnaY!5e1!3m2!1szh-TW!2stw!4v1759643156833!5m2!1szh-TW!2stw",
+		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	} /* TODO */
 )
 var now_disaster = disasters[0]
@@ -146,6 +181,7 @@ function chooseTimeline(row, col) {
 		console.log(now_disaster.events[col][0])
 		changed_btns = btns1
 		tar = btns1[col]
+		description_block.innerHTML = now_disaster.events[col][2];
 	}
 	else {
 		changed_btns = btns2;
@@ -181,7 +217,9 @@ function chooseTimeline(row, col) {
 function reload(disaster) {
 	now_disaster = disaster
 	title_place.innerHTML = disaster.title;
-	description_block.innerHTML = disaster.description;
+	console.log(disaster.incidentText)
+	hypothesis_block.innerHTML = disaster.hypothesis;
+	incident_block.innerHTML = disaster.incidentText;
 	eventMapIframe.src = disaster.mapEmbedUrl;
 	console.log(`reloading ${disaster.buttonClassName}`)
 	chooseTimeline(1, 0);
