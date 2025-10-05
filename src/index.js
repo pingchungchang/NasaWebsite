@@ -117,7 +117,7 @@ disasters.push(
 				"The lake has not yet formed. We don’t see blue at the location of the barrier lake."
 			],
             [
-				"", "Jul25\nBarrier Lake Formed", ""
+				"", "Jul25<br>Barrier Lake Formed", ""
 			], 
 			[
 				"./0908Hualien.png", "Sep08", 
@@ -128,7 +128,7 @@ disasters.push(
 				"The lake remains"
 			],
 			[
-				"", "Sep23\nTyphoon Ragasa", ""
+				"", "Sep23<br>Typhoon Ragasa", ""
 			], 
 			[
 				"./0930Hualien.png", "Sep30", 
@@ -136,8 +136,7 @@ disasters.push(
 			],
 		],
 		buttonClassName: 'tag-event1',
-		hypothesis: "Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes. ",
-		title: "Fata'an Creek Barrier Lake Overflow Incident",
+        hypothesis: "Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes." + "<br><br>" + "Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.",		title: "Fata'an Creek Barrier Lake Overflow Incident",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
 		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	}
@@ -147,21 +146,21 @@ disasters.push(
 	{
 		events: [
 			[
-				"./0430Pakistan.png", "4/30",
+				"./0430Pakistan.png", "Apr30",
 				"This is how the Indus River, Tarbela Dam, and the city of Khairabad normally look before the monsoon season starts in June. You can see the river is staying in its usual path. The lake at Tarbela Dam is at its normal level."
 			],
 			["", "Start of Monsoon", ""],
 			[
-				"./0804Pakistan.png", "8/4",
+				"./0804Pakistan.png", "Aug04",
 				"After the start of the monsoon season, water levels have risen a lot. The reservoir behind Tarbela Dam has expanded, indicating it is filling with monsoon rainwater."
 			],
 			["", "Flood", ""],
 			[
-				"./0816Pakistan.png", "8/16",
+				"./0816Pakistan.png", "Aug16",
 				"Flooding in the city Khairabad is now obvious. The river at Khairabad has begun to overflow its banks, with dark areas indicating that water is spilling into the city. The Tarbela Dam reservoir appears to be approaching its maximum capacity with a large dark area."
 			],
 			[
-				"./0824Pakistan.png", "8/24",
+				"./0828Pakistan.png", "Aug28",
 				"The Tarbela Dam reservoir remains full."
 			],
 		],
