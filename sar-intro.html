@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Introduction to SAR</title>
+    <link rel="stylesheet" href="/src/style.css">
+     <link rel="stylesheet" href="/src/modal.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <h1 class="title-place">Introduction to SAR</h1>
+            <div class="meta-tags">
+                <span class="tag tag-back-to-index" onclick="window.location='./index.html'">Go Back</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+<!--
+            <aside class="data-parameters">
+                <ul>
+                    <li><strong>Polarization:</strong> VV</li>
+                    <li><strong>Flight Dir.:</strong> ASCENDING/DESCENDING</li>
+                </ul>
+                <button id="show-map-btn">View Location</button>
+            </aside>
+-->
+            <aside class="explanation-sidebar intro-explanation-sidebar">
+                <h2>Description</h2>
+                <p class='description-block'>
+						By defining the transmitted and received polarizations of SAR, we can better interpret features on Earth’s surface. There are four common polarization combinations: VV, VH, HH, and HV. The first letter denotes the transmitted polarization and the second indicates the received one.
+				</p>
+                <p class='description-block'>
+						VV polarization means that the radar transmits and receives vertically polarized waves. It is particularly sensitive to surface scattering, where signals reflect off smooth surfaces such as buildings or bodies of water. VV data are especially useful in agriculture, crop monitoring, and land cover classification for detecting variations in terrain smoothness.
+				</p>
+            </aside>
+
+        </main>
+</body>
+</html>

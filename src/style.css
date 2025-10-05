@@ -131,6 +131,14 @@ h2 {
     color: var(--secondary-text-color);
     line-height: 1.6;
 }
+.intro-explanation-sidebar{
+    flex: 0 0 90%;
+    border: 1px solid var(--border-color);
+    background-color: rgba(0,0,0,0.2);
+    padding: 15px;
+}
+
+
 
 /* --- Timeline --- */
 .timeline {
@@ -185,6 +193,10 @@ h2 {
     opacity: 0.8; /* Make it look faded */
     cursor: not-allowed; /* Show a 'not allowed' cursor on hover */
     pointer-events: none; /* Ignore all mouse clicks */
+}
+
+.timeline-step.disabled span {
+	background-color: #fff;
 }
 
 .timeline-step.active span {

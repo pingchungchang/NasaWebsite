@@ -31,106 +31,6 @@ function ImageSlider_onMouseUp() {
 	document.documentElement.removeEventListener('mousemove', ImageSlider_onMouseMove);
 	document.documentElement.removeEventListener('mouseup', ImageSlider_onMouseUp);
 }
-
-const timeline1 = document.getElementsByClassName('timeline1')[0];
-const btns1 = timeline1.querySelectorAll('.timeline-step');
-const timeline2 = document.getElementsByClassName('timeline2')[0];
-const btns2 = timeline2.querySelectorAll('.timeline-step');
-const description_block = document.querySelector(".description-block")
-const title_place = document.querySelector(".title-place")
-
-let disasters = [] // event_discription.length = events.length
-disasters.push(
-	{
-		events: [
-			["./0722Hualien.png", "Jul22"],
-            ["./0722Hualien.png", "Jul25\nFormation"], // TODO: Disable this button
-			["./0908Hualien.png", "Sep08"],
-			["./0920Hualien.png", "Sep20"],
-			["./0920Hualien.png", "Sep23\nTyphoon Ragasa"], // TODO: Also this
-			["./0930Hualien.png", "Sep30"],
-		],
-		buttonClassName: 'tag-event1',
-		description: "description should also change according to the selected timestamp? And we should put the hypothesis (針對 SAR 的觀察) over here", /* TODO */
-		title: "Fata'an Creek Barrier Lake Overflow Incident",
-        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
-	} /* TODO: mapEmbedUrl needs to change according to the current selected event */
-)
-
-disasters.push(
-	{
-		events: [
-			["./920.png", "BIG EVENT"],
-			["./930.png", "Sep40"],
-			["./920.png", "Sep40"],
-			["./930.png", "BIG EVENT TOO!"],
-		],
-		buttonClassName: 'tag-event2',
-		description: "so what event should be here?",
-		title: "Jinsha River",
-        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=98.6313122525692%2C31.062934758216375%2C98.78323257117272%2C31.1593475455504&amp;layer=mapnik&amp;marker=31.11115339062677%2C98.70727241187092",
-	} /* TODO */
-)
-var now_disaster = disasters[0]
-
-function chooseTimeline(row, col) {
-	var changed_btns;
-	var tar;
-	if (row == 1) {
-		document.getElementsByClassName('image-left')[0].style.backgroundImage=`url(${now_disaster.events[col][0]})`
-		console.log(now_disaster.events[col][0])
-		changed_btns = btns1
-		tar = btns1[col]
-	}
-	else {
-		changed_btns = btns2;
-		tar = btns2[col]
-		document.getElementsByClassName('image-right')[0].src=now_disaster.events[col][0]
-	}
-	changed_btns.forEach( 
-		function (btn, index) {
-			btn.classList.remove('active')
-			if (index >= now_disaster.events.length) {
-				btn.style.display = 'none';
-			}
-			else {
-				btn.querySelector('p').innerHTML = now_disaster.events[index][1]
-				btn.style.display = 'grid'
-			}
-		}
-	)
-	tar.classList.add('active')
-}
-
-function reload(disaster) {
-	now_disaster = disaster
-	title_place.innerHTML = disaster.title;
-	description_block.innerHTML = disaster.description;
-	console.log(`reloading ${disaster.buttonClassName}`)
-	chooseTimeline(1, 0);
-	chooseTimeline(2, 0);
-	disasters.forEach( function (disaster) {
-		const tag = document.querySelector(`.${disaster.buttonClassName}`);
-		console.log(tag)
-		tag.onclick = function () {
-			reload(disaster)
-		}
-	})
-}
-
-btns1.forEach(function(btn, index) {
-	btn.onclick = function () {
-		chooseTimeline(1, index);
-	}
-})
-btns2.forEach(function(btn, index) {
-	btn.onclick = function () {
-		chooseTimeline(2, index);
-	}
-})
-
-reload(disasters[0])
-
 // --- Modal Pop-up Logic ---
 const modalOverlay = document.getElementById('modal-overlay');
 const modalCloseBtn = document.querySelector('.modal-close-btn');
@@ -167,8 +67,8 @@ window.addEventListener('load', showModal);
 
 // --- Map Modal Logic ---
 const showMapBtn = document.getElementById('show-map-btn');
-const mapModalOverlay = document.getElementById('map-modal-overlay');
-const mapModalCloseBtn = document.querySelector('.map-modal-close-btn');
+const mapModalOverlay = document.getElementById('modal-overlay');
+const mapModalCloseBtn = document.querySelector('.modal-close-btn');
 const eventMapIframe = document.getElementById('event-map-iframe');
 
 function showMapModal() {
@@ -196,3 +96,115 @@ window.addEventListener('keydown', (event) => {
         hideMapModal();
     }
 });
+
+const timeline1 = document.getElementsByClassName('timeline1')[0];
+const btns1 = timeline1.querySelectorAll('.timeline-step');
+const timeline2 = document.getElementsByClassName('timeline2')[0];
+const btns2 = timeline2.querySelectorAll('.timeline-step');
+const description_block = document.querySelector(".description-block")
+const title_place = document.querySelector(".title-place")
+
+let disasters = [] // event_discription.length = events.length
+disasters.push(
+	{
+		events: [ // button disabling done by empty string for images
+			["./0722Hualien.png", "Jul22"],
+            ["", "Jul25\nFormation"], 
+			["./0908Hualien.png", "Sep08"],
+			["./0920Hualien.png", "Sep20"],
+			["", "Sep23\nTyphoon Ragasa"], 
+			["./0930Hualien.png", "Sep30"],
+		],
+		buttonClassName: 'tag-event1',
+		description: "description should also change according to the selected timestamp? And we should put the hypothesis (針對 SAR 的觀察) over here", /* TODO */
+		title: "Fata'an Creek Barrier Lake Overflow Incident",
+        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=121.3639,23.4735,121.4039,23.4935&layer=mapnik&marker=23.4835,121.3839",
+	}
+)
+
+disasters.push(
+	{
+		events: [
+			["./920.png", "BIG EVENT"],
+			["./930.png", "Sep40"],
+			["./920.png", "Sep40"],
+			["./930.png", "BIG EVENT TOO!"],
+		],
+		buttonClassName: 'tag-event2',
+		description: "so what event should be here?",
+		title: "Jinsha River",
+        mapEmbedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=98.6313122525692%2C31.062934758216375%2C98.78323257117272%2C31.1593475455504&amp;layer=mapnik&amp;marker=31.11115339062677%2C98.70727241187092",
+	} /* TODO */
+)
+var now_disaster = disasters[0]
+
+function chooseTimeline(row, col) {
+	var changed_btns;
+	var tar;
+	if (row == 1) {
+		document.getElementsByClassName('image-left')[0].style.backgroundImage=`url(${now_disaster.events[col][0]})`
+		console.log(now_disaster.events[col][0])
+		changed_btns = btns1
+		tar = btns1[col]
+	}
+	else {
+		changed_btns = btns2;
+		tar = btns2[col]
+		document.getElementsByClassName('image-right')[0].src=now_disaster.events[col][0]
+	}
+	var button_number = 0;
+	changed_btns.forEach(
+		function (btn, index) {
+			btn.classList.remove('active')
+			if (index >= now_disaster.events.length) {
+				btn.style.display = 'none';
+			}
+			else {
+				console.log(now_disaster.events[index][0])
+				if (now_disaster.events[index][0] != "") {
+					button_number += 1;
+					btn.classList.remove("disabled")
+					btn.querySelector("span").innerHTML = button_number;
+				}
+				else {
+					btn.querySelector("span").innerHTML = "";
+					btn.classList.add("disabled")
+				}
+				btn.querySelector('p').innerHTML = now_disaster.events[index][1]
+				btn.style.display = 'grid'
+			}
+		}
+	)
+	tar.classList.add('active')
+}
+
+function reload(disaster) {
+	now_disaster = disaster
+	title_place.innerHTML = disaster.title;
+	description_block.innerHTML = disaster.description;
+	eventMapIframe.src = disaster.mapEmbedUrl;
+	console.log(`reloading ${disaster.buttonClassName}`)
+	chooseTimeline(1, 0);
+	chooseTimeline(2, 0);
+	disasters.forEach( function (disaster) {
+		const tag = document.querySelector(`.${disaster.buttonClassName}`);
+		console.log(tag)
+		tag.onclick = function () {
+			reload(disaster)
+		}
+	})
+}
+
+btns1.forEach(function(btn, index) {
+	btn.onclick = function () {
+		chooseTimeline(1, index);
+	}
+})
+btns2.forEach(function(btn, index) {
+	btn.onclick = function () {
+		chooseTimeline(2, index);
+	}
+})
+
+reload(disasters[0])
+
