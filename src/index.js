@@ -138,7 +138,7 @@ disasters.push(
 		buttonClassName: 'tag-event1',
         hypothesis: "Through observation of VV data on SAR graphs, we could monitor the formation and evolution of barrier lakes." + "<br><br>" + "Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.",		title: "Fata'an Creek Barrier Lake Overflow Incident",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
-		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
+		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fata'an barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	}
 )
 
