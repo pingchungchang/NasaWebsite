@@ -108,6 +108,7 @@ console.log(incident_block)
 const title_place = document.querySelector(".title-place")
 
 let disasters = [] // event_discription.length = events.length
+
 disasters.push(
 	{
 		events: [ // button disabling done by empty string for images
@@ -171,6 +172,31 @@ disasters.push(
 		incidentText: "In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
 	} /* TODO */
 )
+
+disasters.push(
+	{
+		events: [ // button disabling done by empty string for images
+			[
+				"./0529Canada.png", "May29",
+				"This is a pre-fire baseline. The high backscatter signals strong volume scattering from the dense, healthy canopy."
+			],
+			[
+				"./0716Canada.png", "Jul16", 
+				"The wildfire was continuing, and this graph shows the impact of the fire.The main burn scar shows a sharp brightening as the canopy is destroyed. Near the river, the ground-level moisture and burnt remnants cause an anomalous darkening (Double-Bounce effect)."
+			],
+			[
+				"./1207Canada.png", "Dec07",
+				"About 3 months after the wildfire ended. The riverbank's bright anomaly has faded as surface conditions stabilized (e.g. ground dried). The main burn scar becomes a little bit darker, signaling that only minimal low-lying vegetation has begun to recover."
+			],
+		],
+		buttonClassName: 'tag-event3',
+		hypothesis: "TODO",
+		title: "2023 Canada Wildfire",
+		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16409.87735941618!2d121.44275951469577!3d23.674511120600098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-TW!2stw!4v1759644013456!5m2!1szh-TW!2stw",
+		incidentText: "The 2023 Canada wildfires were the most destructive in the nation’s history, burning over 18 million hectares—an area fueled by extreme heat. The fires caused widespread smoke emergencies across North America and beyond, highlighting the severe impact of climate change on Canada’s boreal forests.",
+	}
+)
+
 var now_disaster = disasters[0]
 
 function chooseTimeline(row, col) {

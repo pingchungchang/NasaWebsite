@@ -11,30 +11,42 @@
 
     <div class="container">
         <header class="site-header">
-            <h1 class="title-place">Barrier Lake Incidents</h1>
+            <h1 class="title-place" style="max-width:50%;">Barrier Lake Incidents</h1>
             <div class="meta-tags">
                 <span class="tag to-sar-intro" onclick="window.location='./sar-intro.html'">Introduction to SAR</span>
                 <span class="tag tag-event1">2025 Fata'an</span>
                 <span class="tag tag-event2">Pakistan</span>
+                <span class="tag tag-event3">Canada Forest Fire</span>
             </div>
         </header>
 
         <main class="main-content">
             
             <aside class="data-parameters">
+<!--
                 <ul>
                     <li><strong>Polarization:</strong> VV</li>
-                    <li><strong>Flight Dir.:</strong> ASCENDING/DESCENDING</li>
                 </ul>
+-->
                 <button id="show-map-btn">View Location</button>
 				<p class='hypothesis-block'>
-					this place is for hypothesis
+					<p>1. Hello World</p>
+
+					<p>2. Bye </p>
+					<img src="/scalar.png"/>
 				</p>
             </aside>
 
             <div class="visual-container">
 				<script type="module" src="/src/index.js"></script>
-				<div class='grid-stack'>
+				<div class='grid-stack' style='display:grid;'>
+					<div class='grid-left'>
+						<div class='image-left'></div>
+						<div class='vertical-line'></div>
+					</div>
+					<img class='image-right' src='/930.png'/>
+				</div>
+				<div class='grid-stack' style='display:none;'>
 					<div class='grid-left'>
 						<div class='image-left'></div>
 						<div class='vertical-line'></div>
@@ -142,23 +154,21 @@
     </div>
 
 
-
-    <div id="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-btn">&times;</button>
-            <h2>Welcome to the ___________________</h2>
-            <p>
-                This interface allows you to compare _______ from different stages of _________________.
-            </p>
-            <p><strong>How to use:</strong></p>
-            <ul>
-                <li>Select an event (e.g., "Fata'an") from the tags in the header.</li>
-                <li>Click on the timeline steps to load different images into your selected side for comparison.</li>
-                <li>Drag the vertical bar in the center to slide between the two images.</li>
-            </ul>
-        </div>
-    </div>
-
+	<div id="modal-overlay">
+		<div class="modal-content">
+			<button class="modal-close-btn">&times;</button>
+			<h2>Welcome to the Disaster Observation Platform</h2>
+			<p>
+				This interface allows you to compare SAR observations from different stages of a natural disaster.
+			</p>
+			<p><strong>How to use:</strong></p>
+			<ul>
+				<li>Select an event from the tags in the header.</li>
+				<li>Click on the timeline steps to load different images into your selected side for comparison.</li>
+				<li>Drag the vertical bar in the center to slide between the two images.</li>
+			</ul>
+		</div>
+	</div>
 
 </body>
 </html>
