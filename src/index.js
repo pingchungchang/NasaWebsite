@@ -34,12 +34,17 @@ function ImageSlider_onMouseUp() {
 // --- Modal Pop-up Logic ---
 const modalOverlay = document.getElementById('modal-overlay');
 const modalCloseBtn = document.querySelector('.modal-close-btn');
+const modalTitle = document.querySelector('.modal-title');
+const modalText = document.querySelector('.modal-text');
+const OUR_HYPOTHESIS = "<p>In SAR imagery, the amount of energy received by the satellite depends on the roughness of the surface.</p><p> When the surface is smooth, such as a body of water, most of the radar signal is reflected away from the satellite, resulting in low backscatter and a darker appearance in the image. In contrast, rough surfaces like forests or mountains cause multiple scattering and reflect more energy back to the satellite, appearing brighter.</p> <p>By observing these differences, we can identify changes in terrain and distinguish between water bodies and land or vegetation-covered areas.</p>";
 
 function showModal() {
     modalOverlay.classList.remove('hidden');
 }
 
 function hideModal() {
+	modalText.innerHTML = OUR_HYPOTHESIS;
+	modalTitle.innerHTML = "Our Hypothesis";
     modalOverlay.classList.add('hidden');
 }
 
@@ -70,6 +75,7 @@ const showMapBtn = document.getElementById('show-map-btn');
 const mapModalOverlay = document.getElementById('modal-overlay');
 const mapModalCloseBtn = document.querySelector('.modal-close-btn');
 const eventMapIframe = document.getElementById('event-map-iframe');
+const colorBar = document.querySelector('.color-bar');
 
 function showMapModal() {
     mapModalOverlay.classList.remove('hidden');
@@ -111,6 +117,7 @@ let disasters = [] // event_discription.length = events.length
 
 disasters.push(
 	{
+		polarize: 'vv',
 		events: [ // button disabling done by empty string for images
 			[
 				"./0722Hualien.png", "Jul22",
@@ -132,7 +139,7 @@ disasters.push(
 			], 
 			[
 				"./0930Hualien.png", "Sep30", 
-				"Downtown Guangfu has a large portion of green and blue, indicating the occurrence of the flood. The barrier lake lost its shape at this stage, but more blue dots exist in the surroundings, representing the burst of the lake."
+				"Downtown Guangfu has a large portion of green and blue, indicating the occurrence of the flood. The barrier lake lost its shape at this stage, but more blue dots exist in the surroundings, representing the burst of the lake.<p>Note that the satellite's flight direction was ascending instead of descending on Sep 30, resulting in different looks of the mountains.</p>"
 			],
 		],
 		buttonClassName: 'tag-event1',
@@ -145,6 +152,7 @@ disasters.push(
 
 disasters.push(
 	{
+		polarize: 'vv',
 		events: [
 			[
 				"./0430Pakistan.png", "Apr30",
@@ -169,12 +177,13 @@ disasters.push(
 		hypothesis: "so what event should be here?",
 		title: "2025 Pakistan Floods",
 		mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12574.408000275269!2d72.21630860376001!3d33.89536473266908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df275de55d828f%3A0x1a64033f155f9673!2zS2hhaXJhYmFkLCDlt7Tln7rmlq_lnaY!5e1!3m2!1szh-TW!2stw!4v1759643156833!5m2!1szh-TW!2stw",
-		incidentText: "<strong>Polarization: </strong> VV<br><br>In late September 2025, Typhoon Ragasa triggered a landslide that caused a barrier lake on Fataan barrier lake to burst, leading to severe flooding in Guangfu Township, Hualien, killing 18 people and causing losses exceeding NT$20 million."
+		incidentText: "In 2025, a flood broke out in Pakitan which claimed a thousand of lives. Water levels of the Indus River near the town of Khairabad rose sharply during the monsoon. Authorities issued alerts due to the position of this town, where the Kabul River meets the Indus. The body of water expands dramatically in our photo, which illustrates the fact that SAR can monitor potential incident without measuring physically."
 	} /* TODO */
 )
 
 disasters.push(
 	{
+		polarize: 'vh',
 		events: [ // button disabling done by empty string for images
 			[
 				"./0529Canada.png", "May29",
@@ -242,9 +251,10 @@ function chooseTimeline(row, col) {
 
 function reload(disaster) {
 	now_disaster = disaster
+	colorBar.src = `./${disaster.polarize}.jpg`;
 	title_place.innerHTML = disaster.title;
 	console.log(disaster.incidentText)
-	hypothesis_block.innerHTML = disaster.hypothesis;
+	// hypothesis_block.innerHTML = disaster.hypothesis;
 	incident_block.innerHTML = disaster.incidentText;
 	eventMapIframe.src = disaster.mapEmbedUrl;
 	console.log(`reloading ${disaster.buttonClassName}`)

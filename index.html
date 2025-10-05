@@ -11,7 +11,7 @@
 
     <div class="container">
         <header class="site-header">
-            <h1 class="title-place" style="max-width:50%;">Barrier Lake Incidents</h1>
+            <h1 class="title-place" style="max-width:30vw;">Barrier Lake Incidents</h1>
             <div class="meta-tags">
                 <span class="tag to-sar-intro" onclick="window.location='./sar-intro.html'">Introduction to SAR</span>
                 <span class="tag tag-event1">Taiwan Fata'an</span>
@@ -28,9 +28,8 @@
                     <li><strong>Polarization:</strong> VV</li>
                 </ul>
 -->
-                <button id="show-map-btn">Show Intro</button>
-				<img src="/vh.jpg" style='max-width:40%'/>
-				<img src="/vv.jpg" style='max-width:40%'/>
+                <button id="show-map-btn">Show Our Hypothesis</button>
+				<img class='color-bar' src='/vh.jpg' style='max-height:3vh;'/>
 				<p class='hypothesis-block'>
 					<!--
 					<p>1. Hello World</p>
@@ -153,16 +152,18 @@
 	<div id="modal-overlay">
 		<div class="modal-content">
 			<button class="modal-close-btn">&times;</button>
-			<h2>Welcome to the Disaster Observation Platform</h2>
-			<p>
-				This interface allows you to compare SAR observations from different stages of a natural disaster.
-			</p>
-			<p><strong>How to use:</strong></p>
-			<ul>
-				<li>Select an event from the tags in the header.</li>
-				<li>Click on the timeline steps to load different images into your selected side for comparison.</li>
-				<li>Drag the vertical bar in the center to slide between the two images.</li>
-			</ul>
+			<h2 class='modal-title'>Welcome to the Disaster Observation Platform</h2>
+			<div class='modal-text'>
+				<p>
+					This interface allows you to compare SAR observations from different stages of a natural disaster.
+				</p>
+				<p><strong>How to use:</strong></p>
+				<ul>
+					<li>Select an event from the tags in the header.</li>
+					<li>Click on the timeline steps to load different images into your selected side for comparison.</li>
+					<li>Drag the vertical bar in the center to slide between the two images.</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
