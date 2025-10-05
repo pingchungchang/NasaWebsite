@@ -148,21 +148,21 @@ disasters.push(
 		events: [
 			[
 				"./0430Pakistan.png", "4/30",
-				""
+				"This is how the Indus River, Tarbela Dam, and the city of Khairabad normally look before the monsoon season starts in June. You can see the river is staying in its usual path. The lake at Tarbela Dam is at its normal level."
 			],
 			["", "Start of Monsoon", ""],
 			[
 				"./0804Pakistan.png", "8/4",
-				""
+				"After the start of the monsoon season, water levels have risen a lot. The reservoir behind Tarbela Dam has expanded, indicating it is filling with monsoon rainwater."
 			],
 			["", "Flood", ""],
 			[
 				"./0816Pakistan.png", "8/16",
-				""
+				"Flooding in the city Khairabad is now obvious. The river at Khairabad has begun to overflow its banks, with dark areas indicating that water is spilling into the city. The Tarbela Dam reservoir appears to be approaching its maximum capacity with a large dark area."
 			],
 			[
 				"./0824Pakistan.png", "8/24",
-				""
+				"The Tarbela Dam reservoir remains full."
 			],
 		],
 		buttonClassName: 'tag-event2',
